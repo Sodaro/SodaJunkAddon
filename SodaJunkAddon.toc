@@ -1,0 +1,6 @@
+## Interface: 80000
+## Title: SodaJunkAddon
+## Author: Sodaro
+## Notes: Auto sell junk to vendor
+## Version: 0.2.0
+main.lua
