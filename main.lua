@@ -46,7 +46,7 @@ function sellItemsInBag(bag)
       if(quality == 0) then
         soldItems = soldItems + 1;
         if (soldItems ~= 0) then
-          C_Timer.After(slot/10, function() UseContainerItem(bag, slot) end)
+          C_Timer.After(soldItems/10, function() UseContainerItem(bag, slot) end)
         end
       end
     end

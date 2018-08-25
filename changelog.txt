@@ -1,3 +1,11 @@
+### 0.2.2
+-Sells 1 item with a delay (increasing based on the amount of items to sell). This amounts to about 1 item per 0.1seconds
+
+### 0.2.1
+-Sells 1 item with an increasing delay, seems to work faster. (shoutouts to Kanegasi @ Wowinterface)
+-changed so it doesn't print unless something was sold
+-changed name of addon
+
 ### 0.2.0
 - Sells 10 junk every 2 seconds
 - Prints amount of sold items when done
