@@ -16,23 +16,38 @@ end
 frame:SetScript("OnEvent", eventHandler);
 
 function sellItems(self)
+
+  -- for bag = 0,4 do
+  --   numberOfSlots = GetContainerNumSlots(bag);
+  --   for slot = 0,numberOfSlots do
+  --     texture, itemCount, locked, quality, readable, lootable, itemLink = GetContainerItemInfo(bag, slot);
+  --     if(quality == 0) then
+  --       UseContainerItem(bag, slot)
+  --       soldItems = soldItems + 1;
+  --       if (soldItems % 10 == 0) and (soldItems ~= 0) then
+  --         C_Timer.After(0.1,sellItems);
+  --         return;
+  --       end
+  --     end
+  --   end
+  -- end
   for bag = 0,4 do
+    sellItemsInBag(bag);
+  end
+  if (soldItems ~= 0) then
+		print("SodaJunkSeller sold: ", soldItems, " items.")
+	end
+end
+
+function sellItemsInBag(bag)
     numberOfSlots = GetContainerNumSlots(bag);
-    for slot = 0,numberOfSlots do
+    for slot = 1,numberOfSlots do
       texture, itemCount, locked, quality, readable, lootable, itemLink = GetContainerItemInfo(bag, slot);
       if(quality == 0) then
-        UseContainerItem(bag, slot)
         soldItems = soldItems + 1;
-        if (soldItems % 10 == 0) and (soldItems ~= 0) then
-          C_Timer.After(2,sellItems);
-          return;
+        if (soldItems ~= 0) then
+          C_Timer.After(slot/10, function() UseContainerItem(bag, slot) end)
         end
       end
     end
   end
-  if(soldItems == 0) then
-    print("no sellable junk found")
-  else
-    print ("sold: ", soldItems, " items.")
-  end
-end
