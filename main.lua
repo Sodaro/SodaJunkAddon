@@ -1,10 +1,8 @@
 local frame = CreateFrame("FRAME", "SodaTestFrame");
---texture, itemCount, locked, quality, readable, lootable, itemLink = GetContainerItemInfo(b, s);
 frame:RegisterEvent("PLAYER_ENTERING_WORLD");
 frame:RegisterEvent("MERCHANT_SHOW");
 frame:RegisterEvent("MERCHANT_UPDATE");
 frame:RegisterEvent("MERCHANT_CLOSED");
---numberOfSlots = GetContainerNumSlots(b);
 
 soldItems = 0;
 
@@ -12,9 +10,6 @@ local function eventHandler(self, event, ...)
   if (event == "MERCHANT_SHOW") then
     soldItems = 0;
     sellItems();
-  end
-  if (event == "MERCHANT_CLOSED") then
-    --print("closed")
   end
 end
 
