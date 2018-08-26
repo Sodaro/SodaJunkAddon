@@ -1,3 +1,6 @@
+### 0.3
+-Added brief delay to make sure vendor opens fully before selling (to avoid problems with equipping items)
+
 ### 0.2.3.5
 -Changed to wait 1 second for every 12 items sold
 
