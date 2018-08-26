@@ -1,3 +1,6 @@
+### 0.2.3
+-Added a print for the total amount of money the items sold for.
+
 ### 0.2.2
 -Sells 1 item with a delay (increasing based on the amount of items to sell). This amounts to about 1 item per 0.1seconds
 
