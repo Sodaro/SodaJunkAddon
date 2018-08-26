@@ -1,3 +1,6 @@
+### 0.2.3.5
+-Changed to wait 1 second for every 12 items sold
+
 ### 0.2.3
 -Added a print for the total amount of money the items sold for.
 
